@@ -1,20 +1,9 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Submit Stack") {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh "aws loudformation create-stack --stack-name EC2Instance --template-body file://createEC2.yaml"
             }
         }
     }
