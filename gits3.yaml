@@ -1,0 +1,10 @@
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: DOC-EXAMPLE-BUCKET
+Outputs:
+  BucketName:
+    Value: !Ref S3Bucket
+    Description: Name of the sample Amazon S3 bucket
